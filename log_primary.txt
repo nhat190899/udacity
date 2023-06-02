@@ -1,0 +1,43 @@
+[ec2-user@ip-10-0-3-16 ~]$ mysql -h terraform-20230602024829652900000002.c3qghuouoicq.us-east-1.rds.amazonaws.com -u foo -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 35
+Server version: 8.0.32 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [(none)]> use udacity
+Database changed
+MySQL [udacity]> create table student(name varchar(25));
+Query OK, 0 rows affected (0.070 sec)
+
+MySQL [udacity]> show tables;
++-------------------+
+| Tables_in_udacity |
++-------------------+
+| student           |
++-------------------+
+1 row in set (0.002 sec)
+
+MySQL [udacity]> insert into student (name) values('Cardinal', 'Tom B. Erichsen');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MySQL [udacity]> insert into student ('name') values('Cardinal', 'Tom B. Erichsen');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''name') values('Cardinal', 'Tom B. Erichsen')' at line 1
+MySQL [udacity]> insert into student values('Cardinal', 'Tom B. Erichsen');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MySQL [udacity]> insert into student values("Cardinal", "Tom B. Erichsen");
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MySQL [udacity]> insert into student values("Cardinal"),("Tom B. Erichsen");
+Query OK, 2 rows affected (0.011 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+MySQL [udacity]> select * from student;
++-----------------+
+| name            |
++-----------------+
+| Cardinal        |
+| Tom B. Erichsen |
++-----------------+
+2 rows in set (0.001 sec)
