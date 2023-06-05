@@ -1,0 +1,27 @@
+[ec2-user@ip-10-1-3-164 ~]$ mysql -h terraform-20230602032205874800000002.cw6osg2yv91y.us-west-2.rds.amazonaws.com -u foo -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 23
+Server version: 8.0.32 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [(none)]> use udacity
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MySQL [udacity]> create table class(name varchar(25));
+ERROR 1290 (HY000): The MySQL server is running with the --read-only option so it cannot execute this statement
+MySQL [udacity]> insert into student values("Kuzan"),("Ivories");
+ERROR 1290 (HY000): The MySQL server is running with the --read-only option so it cannot execute this statement
+MySQL [udacity]> select * from student;
++-----------------+
+| name            |
++-----------------+
+| Cardinal        |
+| Tom B. Erichsen |
++-----------------+
+2 rows in set (0.001 sec)

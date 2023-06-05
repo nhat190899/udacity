@@ -1,0 +1,32 @@
+MySQL [udacity]> create table class(name varchar(25));
+ERROR 1290 (HY000): The MySQL server is running with the --read-only option so it cannot execute this statement
+MySQL [udacity]> insert into student values("Kuzan"),("Ivories");
+ERROR 1290 (HY000): The MySQL server is running with the --read-only option so it cannot execute this statement
+MySQL [udacity]> select * from student;
++-----------------+
+| name            |
++-----------------+
+| Cardinal        |
+| Tom B. Erichsen |
++-----------------+
+2 rows in set (0.001 sec)
+
+MySQL [udacity]> create table class(name varchar(25));
+ERROR 1290 (HY000): The MySQL server is running with the --read-only option so it cannot execute this statement
+MySQL [udacity]> select * from student;
++-----------------+
+| name            |
++-----------------+
+| Cardinal        |
+| Tom B. Erichsen |
++-----------------+
+2 rows in set (0.001 sec)
+
+MySQL [udacity]> insert into student values("Kuzan"),("Ivories");
+Query OK, 2 rows affected (0.006 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+MySQL [udacity]> create table class(name varchar(25));
+Query OK, 0 rows affected (0.032 sec)
+
+MySQL [udacity]> 
