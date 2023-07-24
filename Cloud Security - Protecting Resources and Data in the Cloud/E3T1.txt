@@ -1,3 +1,4 @@
 # Describe GuardDuty findings that were detected related to the brute force attack
-
+GuardDuty makes it easier to continuously monitor your AWS accounts, workloads, and data stored in Amazon S3
 # Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information.
+there is a large number of SSH login attempts in VPC Flow logs
