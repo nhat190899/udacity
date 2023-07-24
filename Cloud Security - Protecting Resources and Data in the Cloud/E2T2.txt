@@ -1,3 +1,7 @@
 Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
 
 Bonus - provide recommendations on how to remediate the vulnerabilities.
+
+To remediate these vulnerabilities:
+- remove the ingress rule allowing all incoming traffic from all IPs
+- enable logging on buckets used by web application
